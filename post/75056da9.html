@@ -79,12 +79,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="一片自留地">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="@Transactional 注解事务不起作用的解决可能的原因：1.数据库引擎要支持事务如果是mysql，注意表要使用支持事务的引擎，比如innodb，如果是myisam，事 务是不起作用的 2.是否开启了对注解的解析配置文件必须加&amp;lt;tx:annotation-driven /&amp;gt;，否则不解析@Transactional 3.注解时是否设置的是readOnly=true只读标志只在事务启">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transactional 注解事务不起作用的解决">
+<meta property="og:url" content="http://yoursite.com/post/75056da9.html">
 <meta property="og:site_name" content="一片自留地">
+<meta property="og:description" content="@Transactional 注解事务不起作用的解决可能的原因：1.数据库引擎要支持事务如果是mysql，注意表要使用支持事务的引擎，比如innodb，如果是myisam，事 务是不起作用的 2.是否开启了对注解的解析配置文件必须加&amp;lt;tx:annotation-driven /&amp;gt;，否则不解析@Transactional 3.注解时是否设置的是readOnly=true只读标志只在事务启">
+<meta property="og:updated_time" content="2018-02-12T04:49:56.895Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一片自留地">
+<meta name="twitter:title" content="Transactional 注解事务不起作用的解决">
+<meta name="twitter:description" content="@Transactional 注解事务不起作用的解决可能的原因：1.数据库引擎要支持事务如果是mysql，注意表要使用支持事务的引擎，比如innodb，如果是myisam，事 务是不起作用的 2.是否开启了对注解的解析配置文件必须加&amp;lt;tx:annotation-driven /&amp;gt;，否则不解析@Transactional 3.注解时是否设置的是readOnly=true只读标志只在事务启">
 
 
 
@@ -114,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/post/75056da9.html"/>
 
 
 
 
 
-  <title>一片自留地</title>
+  <title>Transactional 注解事务不起作用的解决 | 一片自留地</title>
   
 
 
@@ -139,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,260 +216,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/undefined.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一片自留地">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/undefined.html" itemprop="url">http-and-https</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T11:35:48+08:00">
-                2018-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="HTTP-超文本传输协议，是从服务器传输数据到本地浏览器的一种协议，它基于TCP-IP-通讯协议来传输数据（包括文本，图片，查询结果等）"><a href="#HTTP-超文本传输协议，是从服务器传输数据到本地浏览器的一种协议，它基于TCP-IP-通讯协议来传输数据（包括文本，图片，查询结果等）" class="headerlink" title="HTTP: 超文本传输协议，是从服务器传输数据到本地浏览器的一种协议，它基于TCP/IP 通讯协议来传输数据（包括文本，图片，查询结果等）"></a>HTTP: 超文本传输协议，是从服务器传输数据到本地浏览器的一种协议，它基于TCP/IP 通讯协议来传输数据（包括文本，图片，查询结果等）</h5><h6 id="http的主要特点："><a href="#http的主要特点：" class="headerlink" title="http的主要特点："></a>http的主要特点：</h6><pre><code>1、简单：客户端向服务器请求服务时，只需传送请求方法和路径，常用的请求方法：GET、POST、DELETE、HEAD，并且因为简单，所以使得HTTP服务器的程序规模小，因而通信速度很快。
-2、灵活：协议允许传输任何类型的数据对象，传输类型只需要由Content-Type标记即可
-3、无连接：限制每次链接只处理一个请求，服务器处理完请求，并受到客户应答之后即断开链接，所以节省传输时间
-4、无状态：指协议对于事物处理没有记忆功能，即后续再次需要前面处理的信息，那么客户端必须重传，这样虽然可能导致每次链接传输的数据增大，但是在服务器不需要前面的信息时，应答速度就很快。
-</code></pre><h5 id="HTTPS："><a href="#HTTPS：" class="headerlink" title="HTTPS："></a>HTTPS：</h5>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/undefined.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="一片自留地">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/undefined.html" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T11:24:36+08:00">
-                2018-02-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -496,9 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/75056da9.html" itemprop="url">Transactional 注解事务不起作用的解决</a></h1>
+          <h1 class="post-title" itemprop="name headline">Transactional 注解事务不起作用的解决</h1>
         
 
         <div class="post-meta">
@@ -524,6 +274,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/post/75056da9.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/post/75056da9.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -548,9 +308,7 @@
       
 
       
-        
-          
-            <h3 id="Transactional-注解事务不起作用的解决"><a href="#Transactional-注解事务不起作用的解决" class="headerlink" title="@Transactional 注解事务不起作用的解决"></a>@Transactional 注解事务不起作用的解决</h3><h4 id="可能的原因："><a href="#可能的原因：" class="headerlink" title="可能的原因："></a>可能的原因：</h4><h5 id="1-数据库引擎要支持事务"><a href="#1-数据库引擎要支持事务" class="headerlink" title="1.数据库引擎要支持事务"></a>1.数据库引擎要支持事务</h5><pre><code>如果是mysql，注意表要使用支持事务的引擎，比如innodb，如果是myisam，事
+        <h3 id="Transactional-注解事务不起作用的解决"><a href="#Transactional-注解事务不起作用的解决" class="headerlink" title="@Transactional 注解事务不起作用的解决"></a>@Transactional 注解事务不起作用的解决</h3><h4 id="可能的原因："><a href="#可能的原因：" class="headerlink" title="可能的原因："></a>可能的原因：</h4><h5 id="1-数据库引擎要支持事务"><a href="#1-数据库引擎要支持事务" class="headerlink" title="1.数据库引擎要支持事务"></a>1.数据库引擎要支持事务</h5><pre><code>如果是mysql，注意表要使用支持事务的引擎，比如innodb，如果是myisam，事
 务是不起作用的
 </code></pre><h5 id="2-是否开启了对注解的解析"><a href="#2-是否开启了对注解的解析" class="headerlink" title="2.是否开启了对注解的解析"></a>2.是否开启了对注解的解析</h5><pre><code>配置文件必须加&lt;tx:annotation-driven /&gt;，否则不解析@Transactional
 </code></pre><h5 id="3-注解时是否设置的是readOnly-true"><a href="#3-注解时是否设置的是readOnly-true" class="headerlink" title="3.注解时是否设置的是readOnly=true"></a>3.注解时是否设置的是readOnly=true</h5><pre><code>只读标志只在事务启动时应用，否则即使配置也会被忽略。 
@@ -568,8 +326,6 @@
    7、加于接口方法后, 被它类的私有方法调用后, 有效
 总结: Transactional是否生效, 仅取决于是否加载于接口方法, 并且是否通过接口方法调用(而不是本类调用)
 </code></pre>
-          
-        
       
     </div>
     
@@ -586,12 +342,28 @@
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/undefined.html" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -601,10 +373,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -612,6 +385,17 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -632,8 +416,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -675,6 +468,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Transactional-注解事务不起作用的解决"><span class="nav-number">1.</span> <span class="nav-text">@Transactional 注解事务不起作用的解决</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可能的原因："><span class="nav-number">1.1.</span> <span class="nav-text">可能的原因：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-数据库引擎要支持事务"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.数据库引擎要支持事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-是否开启了对注解的解析"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.是否开启了对注解的解析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-注解时是否设置的是readOnly-true"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.注解时是否设置的是readOnly=true</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-你的异常类型是不是unchecked异常。"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. 你的异常类型是不是unchecked异常。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-Transactional-注解方法方式不对"><span class="nav-number">1.1.5.</span> <span class="nav-text">5.@Transactional 注解方法方式不对</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -817,6 +626,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -868,6 +681,30 @@
       </style>
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'awuhuan',
+            repo: 'gitpage_comment',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '410f615c62f59c5f661493f645ee12d6cb199b6e',
+            
+                client_id: 'a8ad34616dff82f870bb'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 

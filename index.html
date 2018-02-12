@@ -181,7 +181,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -257,7 +257,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-09T16:36:24+08:00">
                 2018-02-09
@@ -308,10 +308,16 @@
 启动事务会增加线程开销，数据库因共享读取而锁定(具体跟数据库类型和事务隔离
 级别有关)。通常情况下，仅是读取数据时，不必设置只读事务而增加额外的系统开
 销。
-</code></pre><p>#####5. 你的异常类型是不是unchecked异常。<br>        如果我想check异常也想回滚怎么办，注解上面写明异常类型即可。<br>        @Transactional(rollbackFor=Exception.class)</p>
-<p>#####6.@Transactional 注解方法方式不对<br>        1、加于private方法, 无效<br>        2、加于未加入接口的public方法, 再通过普通接口方法调用, 无效<br>        3、加于接口方法, 无论下面调用的是private或public方法, 都有效<br>        4、加于接口方法后, 被本类普通接口方法直接调用, 无效<br>        5、加于接口方法后, 被本类普通接口方法通过接口调用, 有效<br>        6、加于接口方法后, 被它类的接口方法调用, 有效<br>        7、加于接口方法后, 被它类的私有方法调用后, 有效</p>
-<p>#####总结: Transactional是否生效, 仅取决于是否加载于接口方法, 并且是否通过接口方法调用(而不是本类调用)</p>
-
+</code></pre><h5 id="5-你的异常类型是不是unchecked异常。"><a href="#5-你的异常类型是不是unchecked异常。" class="headerlink" title="5. 你的异常类型是不是unchecked异常。"></a>5. 你的异常类型是不是unchecked异常。</h5><pre><code>如果我想check异常也想回滚怎么办，注解上面写明异常类型即可。
+@Transactional(rollbackFor=Exception.class)
+</code></pre><h5 id="6-Transactional-注解方法方式不对"><a href="#6-Transactional-注解方法方式不对" class="headerlink" title="6.@Transactional 注解方法方式不对"></a>6.@Transactional 注解方法方式不对</h5><pre><code>1、加于private方法, 无效
+2、加于未加入接口的public方法, 再通过普通接口方法调用, 无效
+3、加于接口方法, 无论下面调用的是private或public方法, 都有效
+4、加于接口方法后, 被本类普通接口方法直接调用, 无效
+5、加于接口方法后, 被本类普通接口方法通过接口调用, 有效
+6、加于接口方法后, 被它类的接口方法调用, 有效
+7、加于接口方法后, 被它类的私有方法调用后, 有效
+</code></pre><h5 id="总结-Transactional是否生效-仅取决于是否加载于接口方法-并且是否通过接口方法调用-而不是本类调用"><a href="#总结-Transactional是否生效-仅取决于是否加载于接口方法-并且是否通过接口方法调用-而不是本类调用" class="headerlink" title="总结: Transactional是否生效, 仅取决于是否加载于接口方法, 并且是否通过接口方法调用(而不是本类调用)"></a>总结: Transactional是否生效, 仅取决于是否加载于接口方法, 并且是否通过接口方法调用(而不是本类调用)</h5>
           
         
       
@@ -388,7 +394,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-09T16:09:29+08:00">
                 2018-02-09
@@ -521,7 +527,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -571,7 +577,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
